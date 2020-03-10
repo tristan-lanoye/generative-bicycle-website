@@ -1,0 +1,26 @@
+{
+	"name": "tlv3",
+	"version": "1.0.0",
+	"description": "Design Generatif",
+	"author": "Tristan Lanoye",
+	"private": true,
+	"scripts": {
+		"dev": "nuxt",
+		"build": "nuxt build",
+		"start": "nuxt start",
+		"generate": "nuxt generate"
+	},
+	"dependencies": {
+		"cross-env": "^5.2.0",
+		"gsap": "^2.0.2",
+		"imagesloaded": "^4.1.4",
+		"in-viewport": "^3.6.0",
+		"nuxt": "^2.11.0",
+		"smoothscroll-polyfill": "^0.4.4",
+		"stylus": "^0.54.5",
+		"stylus-loader": "^3.0.2"
+	},
+	"devDependencies": {
+		"nodemon": "^1.11.0"
+	}
+}
