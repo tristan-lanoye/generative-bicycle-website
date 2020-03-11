@@ -4,7 +4,9 @@
 			<div class="number">Question {{ state.step.current + 1 }}/{{ questions.length }}</div>
 			<div class="title">{{ currentQuestion.title }}</div>
 		</div>
-		<div class="middle">middle</div>
+		<div class="middle">
+			<answers :data="currentQuestion.options" :card="currentQuestion.card"/>
+		</div>
 		<div class="bottom">
 			<div class="button-container" @click="nextStep">
 				<div class="button">
@@ -44,6 +46,7 @@
 			justify-content center
 			align-items center
 			flex 1
+			width 100%
 		}
 
 		.bottom {
@@ -72,9 +75,14 @@
 <script>
 	import { mapGetters, mapMutations } from 'vuex'
 
+	import answers from '~/components/quiz/answers'
+
 	export default {
 		name: 'quiz-content',
 		props: ['data'],
+		components: {
+			answers
+		},
 		computed: {
 			...mapGetters({
 				state: 'GET_STATE',
@@ -97,6 +105,9 @@
 					this.incrementStep()
 				}
 			}
+		},
+		mounted() {
+			console.log(this.currentQuestion)
 		}
 	}
 </script>

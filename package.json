@@ -18,7 +18,8 @@
 		"nuxt": "^2.11.0",
 		"smoothscroll-polyfill": "^0.4.4",
 		"stylus": "^0.54.5",
-		"stylus-loader": "^3.0.2"
+		"stylus-loader": "^3.0.2",
+		"swiper": "^5.3.6"
 	},
 	"devDependencies": {
 		"nodemon": "^1.11.0"
