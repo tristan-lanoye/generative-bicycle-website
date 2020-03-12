@@ -32,7 +32,7 @@
 
 <script>
 	import { TimelineLite } from 'gsap'
-	import { mapGetters } from 'vuex'
+	import { mapGetters, mapMutations } from 'vuex'
 
 	import topbar from '~/components/topbar'
 	import cards from '~/components/result/cards'
@@ -77,6 +77,33 @@
 			...mapGetters({
 				state: 'GET_STATE'
 			})
+		},
+		methods: {
+			...mapMutations({
+				putStats: 'PUT_STATS'
+			}),
+			isEmpty(obj) {
+				return Object.keys(obj).length === 0
+			}
+		},
+		mounted() {
+			const stats = {
+				rigid: 0,
+				refined: 0,
+				mystical: 0
+			}
+
+			this.state.data.answers.forEach((answer, i) => {
+				if(!this.isEmpty(answer.stats)) {
+					stats.rigid += answer.stats.rigid
+					stats.refined += answer.stats.refined
+					stats.mystical += answer.stats.mystical
+				}
+			})
+
+			this.putStats(stats)
+
+			console.log(stats)
 		}
 	}
 </script>

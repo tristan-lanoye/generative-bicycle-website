@@ -16,6 +16,7 @@
 		"imagesloaded": "^4.1.4",
 		"in-viewport": "^3.6.0",
 		"nuxt": "^2.11.0",
+		"paper-colors": "^1.0.0",
 		"smoothscroll-polyfill": "^0.4.4",
 		"stylus": "^0.54.5",
 		"stylus-loader": "^3.0.2",

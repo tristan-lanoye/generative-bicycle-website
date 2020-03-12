@@ -24,7 +24,8 @@ module.exports = {
 		],
 		script: [
 			{ src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js' },
-			{ src: 'https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js' }
+			{ src: 'https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js' },
+			{ src: 'https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js' }
 		]
 	},
 

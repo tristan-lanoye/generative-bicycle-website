@@ -175,7 +175,8 @@
 					const d = {
 						step: this.state.step.current,
 						index: i,
-						content: data
+						content: data.value,
+						stats: data.data
 					}
 
 					this.putData(d)

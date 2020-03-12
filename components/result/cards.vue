@@ -2,21 +2,21 @@
 	<div class="cards-container">
 		<div class="section">
 			<div class="title">
-				Le paquet
-			</div>
-			<div class="canvas-container"></div>
-		</div>
-		<div class="section">
-			<div class="title">
 				Le dos de la carte
 			</div>
-			<div class="canvas-container"></div>
+			<card name="card-back"/>
 		</div>
 		<div class="section">
 			<div class="title">
 				Le devant de la carte
 			</div>
-			<div class="canvas-container"></div>
+			<card name="card-front"/>
+		</div>
+		<div class="section">
+			<div class="title">
+				Le paquet
+			</div>
+			<card name="pack-front"/>
 		</div>
 	</div>
 </template>
@@ -40,17 +40,6 @@
 					font-size 24px
 				}
 			}
-
-			.canvas-container {
-				width 300px
-				height 400px
-				background blue
-				opacity 0
-
-				@media screen and (max-width: 500px) {
-					width 100%
-				}
-			}
 		}
 	}
 </style>
@@ -58,7 +47,12 @@
 <script>
 	import { mapGetters, mapMutations } from 'vuex'
 
+	import card from '~/components/result/card'
+
 	export default {
 		name: 'cards',
+		components: {
+			card
+		}
 	}
 </script>

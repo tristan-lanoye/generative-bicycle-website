@@ -6,7 +6,12 @@ export const state = () => ({
 		data: {
 			answers: [
 
-			]
+			],
+			stats: {
+				rigid: 0,
+				refined: 0,
+				mystical: 0
+			}
 		}
 	},
 	questions: [
@@ -43,75 +48,99 @@ export const state = () => ({
 			title: 'Quel est votre signe astrologique ?',
 			options: [
 				{
-					value: 'Bélier',
-					data: {
-
-					}
-				},
-				{
-					value: 'Taureau',
-					data: {
-
-					}
-				},
-				{
-					value: 'Gémeaux',
-					data: {
-
-					}
-				},
-				{
-					value: 'Cancer',
-					data: {
-
-					}
-				},
-				{
-					value: 'Lion',
-					data: {
-
-					}
-				},
-				{
-					value: 'Vierge',
-					data: {
-
-					}
-				},
-				{
-					value: 'Balance',
-					data: {
-
-					}
-				},
-				{
-					value: 'Scorpion',
-					data: {
-
-					}
-				},
-				{
-					value: 'Sagittaire',
-					data: {
-
-					}
-				},
-				{
-					value: 'Capricorne',
-					data: {
-
-					}
-				},
-				{
 					value: 'Verseau',
 					data: {
-
+						rigid: 0,
+						refined: 2,
+						mystical: 1
 					}
 				},
 				{
 					value: 'Poisson',
 					data: {
-
+						rigid: 0,
+						refined: 1,
+						mystical: 1
+					}
+				},
+				{
+					value: 'Bélier',
+					data: {
+						rigid: 2,
+						refined: 0,
+						mystical: 0
+					}
+				},
+				{
+					value: 'Taureau',
+					data: {
+						rigid: 1,
+						refined: 0,
+						mystical: 1
+					}
+				},
+				{
+					value: 'Gémeaux',
+					data: {
+						rigid: 1,
+						refined: 0,
+						mystical: 1
+					}
+				},
+				{
+					value: 'Cancer',
+					data: {
+						rigid: 0,
+						refined: 2,
+						mystical: 1
+					}
+				},
+				{
+					value: 'Lion',
+					data: {
+						rigid: 1,
+						refined: 0,
+						mystical: 0
+					}
+				},
+				{
+					value: 'Vierge',
+					data: {
+						rigid: 2,
+						refined: 2,
+						mystical: 0
+					}
+				},
+				{
+					value: 'Balance',
+					data: {
+						rigid: 2,
+						refined: 2,
+						mystical: 2
+					}
+				},
+				{
+					value: 'Scorpion',
+					data: {
+						rigid: 1,
+						refined: 0,
+						mystical: 2
+					}
+				},
+				{
+					value: 'Sagittaire',
+					data: {
+						rigid: 1,
+						refined: 2,
+						mystical: 1
+					}
+				},
+				{
+					value: 'Capricorne',
+					data: {
+						rigid: 1,
+						refined: 0,
+						mystical: 1
 					}
 				}
 			],
@@ -126,13 +155,17 @@ export const state = () => ({
 				{
 					value: 'Dans votre univers intérieur : lorsque vous êtes seul(e)',
 					data: {
-
+						rigid: 0,
+						refined: 1,
+						mystical: 0
 					}
 				},
 				{
 					value: 'À partir de l’environnement extérieur : lorsque vous partagez avec les autres',
 					data: {
-
+						rigid: 0,
+						refined: 0,
+						mystical: 1
 					}
 				}
 			],
@@ -147,13 +180,17 @@ export const state = () => ({
 				{
 					value: 'Par vos 5 sens : vous croyez seulement en ce que vous voyez / touchez / sentez',
 					data: {
-
+						rigid: 1,
+						refined: 0,
+						mystical: 0
 					}
 				},
 				{
 					value: 'En vous confiant à votre "6ème sens" : vous suivez votre instinct',
 					data: {
-
+						rigid: 0,
+						refined: 0,
+						mystical: 1
 					}
 				}
 			],
@@ -168,13 +205,17 @@ export const state = () => ({
 				{
 					value: 'Le raisonnement logique',
 					data: {
-
+						rigid: 0,
+						refined: 1,
+						mystical: 0
 					}
 				},
 				{
 					value: 'Vos valeurs',
 					data: {
-
+						rigid: 1,
+						refined: 0,
+						mystical: 0
 					}
 				}
 			],
@@ -189,13 +230,17 @@ export const state = () => ({
 				{
 					value: 'En échafaudant des plans : vos actions sont réfléchies',
 					data: {
-
+						rigid: 1,
+						refined: 0,
+						mystical: 0
 					}
 				},
 				{
 					value: 'En vous adaptant aux circonstances de la vie',
 					data: {
-
+						rigid: 0,
+						refined: 0,
+						mystical: 1
 					}
 				}
 			],
@@ -216,8 +261,14 @@ export const mutations = {
 	PUT_DATA(state, payload) {
 		state.global.data.answers[payload.step] = {
 			index: payload.index,
-			content: payload.content
+			content: payload.content,
+			stats: payload.stats
 		}
+	},
+	PUT_STATS(state, payload) {
+		state.global.data.stats.rigid = payload.rigid
+		state.global.data.stats.refined = payload.refined
+		state.global.data.stats.mystical = payload.mystical
 	}
 }
 
