@@ -20,6 +20,7 @@
 		-moz-osx-font-smoothing grayscale
 		-webkit-font-smoothing antialiased
 		box-sizing border-box
+		background #67162C
 	}
 
 	.__layout-wrapper {
@@ -39,6 +40,14 @@
 			flex-direction column
 			padding 80px 120px
 			text-align center
+
+			@media screen and (max-width: 1040px) {
+				padding 60px 60px
+			}
+
+			@media screen and (max-width: 400px) {
+				padding 50px 30px
+			}
 
 			.content-bottom {
 				flex 1

@@ -20,9 +20,12 @@ module.exports = {
 			{ rel: 'apple-touch-icon', sizes: '180x180', href: '/favicon/apple-touch-icon.png' },
 			{ rel: 'manifest', href: '/favicon/site.webmanifest' },
 			{ rel: 'mask-icon', href: '/favicon/safari-pinned-tab.svg', color: '#5bbad5' },
-			{ rel: 'stylesheet', href:'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css'},
+			{ rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css' }
 		],
-		script: []
+		script: [
+			{ src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js' },
+			{ src: 'https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js' }
+		]
 	},
 
 	/*

@@ -2,6 +2,11 @@ export const state = () => ({
 	global: {
 		step: {
 			current: 0
+		},
+		data: {
+			answers: [
+
+			]
 		}
 	},
 	questions: [
@@ -9,9 +14,24 @@ export const state = () => ({
 			type: 'options',
 			title: 'Quelle est votre couleur préférée ?',
 			options: [
-				'#00ff00',
-				'#0000ff',
-				'#ff0000'
+				{
+					value: '#00ff00',
+					data: {
+
+					}
+				},
+				{
+					value: '#0000ff',
+					data: {
+
+					}
+				},
+				{
+					value: '#ff0000',
+					data: {
+
+					}
+				}
 			],
 			card: {
 				slug: 'color',
@@ -22,10 +42,78 @@ export const state = () => ({
 			type: 'options',
 			title: 'Quel est votre signe astrologique ?',
 			options: [
-				'Bélier',
-				'Taureau',
-				'Gémeaux',
-				'Cancer'
+				{
+					value: 'Bélier',
+					data: {
+
+					}
+				},
+				{
+					value: 'Taureau',
+					data: {
+
+					}
+				},
+				{
+					value: 'Gémeaux',
+					data: {
+
+					}
+				},
+				{
+					value: 'Cancer',
+					data: {
+
+					}
+				},
+				{
+					value: 'Lion',
+					data: {
+
+					}
+				},
+				{
+					value: 'Vierge',
+					data: {
+
+					}
+				},
+				{
+					value: 'Balance',
+					data: {
+
+					}
+				},
+				{
+					value: 'Scorpion',
+					data: {
+
+					}
+				},
+				{
+					value: 'Sagittaire',
+					data: {
+
+					}
+				},
+				{
+					value: 'Capricorne',
+					data: {
+
+					}
+				},
+				{
+					value: 'Verseau',
+					data: {
+
+					}
+				},
+				{
+					value: 'Poisson',
+					data: {
+
+					}
+				}
 			],
 			card: {
 				size: 'small'
@@ -35,8 +123,18 @@ export const state = () => ({
 			type: 'options',
 			title: 'Ou puisez-vous votre énergie ?',
 			options: [
-				'Dans votre univers intérieur : lorsque vous êtes seul(e)',
-				'À partir de l’environnement extérieur : lorsque vous partagez avec les autres'
+				{
+					value: 'Dans votre univers intérieur : lorsque vous êtes seul(e)',
+					data: {
+
+					}
+				},
+				{
+					value: 'À partir de l’environnement extérieur : lorsque vous partagez avec les autres',
+					data: {
+
+					}
+				}
 			],
 			card: {
 				size: 'large'
@@ -46,8 +144,18 @@ export const state = () => ({
 			type: 'options',
 			title: 'Comment recueillez-vous l\'information ?',
 			options: [
-				'Par vos 5 sens : vous croyez seulement en ce que vous voyez / touchez / sentez',
-				'En vous confiant à votre "6ème sens" : vous suivez votre instinct'
+				{
+					value: 'Par vos 5 sens : vous croyez seulement en ce que vous voyez / touchez / sentez',
+					data: {
+
+					}
+				},
+				{
+					value: 'En vous confiant à votre "6ème sens" : vous suivez votre instinct',
+					data: {
+
+					}
+				}
 			],
 			card: {
 				size: 'large'
@@ -57,8 +165,18 @@ export const state = () => ({
 			type: 'options',
 			title: 'Qu\'est-ce qui entraine votre décision ?',
 			options: [
-				'Le raisonnement logique',
-				'Vos valeurs'
+				{
+					value: 'Le raisonnement logique',
+					data: {
+
+					}
+				},
+				{
+					value: 'Vos valeurs',
+					data: {
+
+					}
+				}
 			],
 			card: {
 				size: 'large'
@@ -68,8 +186,18 @@ export const state = () => ({
 			type: 'options',
 			title: 'De quelle manière vous lancez-vous dans l\'action ?',
 			options: [
-				'En échafaudant des plans : vos actions sont réfléchies',
-				'En vous adaptant aux circonstances de la vie'
+				{
+					value: 'En échafaudant des plans : vos actions sont réfléchies',
+					data: {
+
+					}
+				},
+				{
+					value: 'En vous adaptant aux circonstances de la vie',
+					data: {
+
+					}
+				}
 			],
 			card: {
 				size: 'large'
@@ -84,6 +212,12 @@ export const mutations = {
 	},
 	DECREMENT_STEP(state) {
 		state.global.step.current--
+	},
+	PUT_DATA(state, payload) {
+		state.global.data.answers[payload.step] = {
+			index: payload.index,
+			content: payload.content
+		}
 	}
 }
 
