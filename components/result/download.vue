@@ -7,22 +7,20 @@
 			Ce paquet de carte a été créé spécialement pour vous selon votre personnalité et votre signe astrologique
 		</div>
 		<div class="download-button-container">
-			<div class="download-button">
+			<div class="download-button" @click="onDownloadClick">
 				<span>Télécharger votre résultat</span>
 				<img src="~/assets/icons/sparkles.png" alt="">
 			</div>
-			<div class="refresh-button">
+			<!-- <div class="refresh-button" @click="onRefreshClick">
 				<span class="refresh">Actualiser</span>
 				<img src="~/assets/icons/refresh.svg" alt="">
-			</div>
+			</div> -->
 		</div>
 	</div>
 </template>
 
 <style lang="stylus" scoped>
 	.download-container {
-		position sticky
-		top 0px
 		flex 1
 		text-align left
 		margin-right 150px
@@ -143,9 +141,18 @@
 </style>
 
 <script>
+	import PubSub from 'pubsub-js'
 	import { mapGetters, mapMutations } from 'vuex'
 
 	export default {
 		name: 'download',
+		methods: {
+			onDownloadClick() {
+				PubSub.publish('DOWNLOAD_CANVAS')
+			},
+			onRefreshClick() {
+				this.$nuxt.$emit('REFRESH_CANVAS')
+			}
+		}
 	}
 </script>

@@ -81,12 +81,13 @@
 		methods: {
 			...mapMutations({
 				putStats: 'PUT_STATS'
-			}),
-			isEmpty(obj) {
-				return Object.keys(obj).length === 0
-			}
+			})
 		},
 		mounted() {
+			if(this.state.data.answers.length === 0) {
+				this.$router.push('/')
+			}
+
 			const stats = {
 				rigid: 0,
 				refined: 0,
@@ -94,7 +95,7 @@
 			}
 
 			this.state.data.answers.forEach((answer, i) => {
-				if(!this.isEmpty(answer.stats)) {
+				if(i !== 0) {
 					stats.rigid += answer.stats.rigid
 					stats.refined += answer.stats.refined
 					stats.mystical += answer.stats.mystical
@@ -102,8 +103,6 @@
 			})
 
 			this.putStats(stats)
-
-			console.log(stats)
 		}
 	}
 </script>

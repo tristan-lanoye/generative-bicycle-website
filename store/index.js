@@ -20,23 +20,98 @@ export const state = () => ({
 			title: 'Quelle est votre couleur préférée ?',
 			options: [
 				{
-					value: '#00ff00',
+					value: '#0D2226',
 					data: {
-
+						complementary: [
+							'#8FECFF',
+							'#75E8FF',
+							'#B36B2E',
+							'#FFB575',
+						]
 					}
 				},
 				{
-					value: '#0000ff',
+					value: '#4fe89b',
 					data: {
-
+						complementary: [
+							'#0D2226',
+							'#B33D2E',
+							'#FF8575',
+						]
 					}
 				},
 				{
-					value: '#ff0000',
+					value: '#5ebfff',
 					data: {
-
+						complementary: [
+							'#0D2226',
+							'#B37C2E',
+							'#FFC675',
+						]
 					}
-				}
+				},
+				{
+					value: '#ff70e0',
+					data: {
+						complementary: [
+							'#0D2226',
+							'#49B32E',
+							'#91FF75',
+						]
+					}
+				},
+				{
+					value: '#e063ff',
+					data: {
+						complementary: [
+							'#0D2226',
+							'#7EB32E',
+							'#C9FF75',
+						]
+					}
+				},
+				{
+					value: '#ffd52b',
+					data: {
+						complementary: [
+							'#0D2226',
+							'#B33D2E',
+							'#FF8575',
+						]
+					}
+				},
+				{
+					value: '#fcb035',
+					data: {
+						complementary: [
+							'#0D2226',
+							'#2E35B3',
+							'#757CFF',
+						]
+					}
+				},
+				{
+					value: '#ff432e',
+					data: {
+						complementary: [
+							'#0D2226',
+							'#2EB36D',
+							'#75FFB7',
+						]
+					}
+				},
+				{
+					value: '#fefffc',
+					data: {
+						complementary: [
+							'#0D2226',
+							'#5DB0FF',
+							'#FF7680',
+							'#008FAD',
+							'#BD05FA',
+						]
+					}
+				},
 			],
 			card: {
 				slug: 'color',
@@ -264,11 +339,15 @@ export const mutations = {
 			content: payload.content,
 			stats: payload.stats
 		}
+
+		window.statsData = state.global.data
 	},
 	PUT_STATS(state, payload) {
 		state.global.data.stats.rigid = payload.rigid
 		state.global.data.stats.refined = payload.refined
 		state.global.data.stats.mystical = payload.mystical
+
+		window.statsData = state.global.data
 	}
 }
 

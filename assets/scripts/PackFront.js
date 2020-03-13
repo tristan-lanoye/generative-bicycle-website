@@ -1,10 +1,10 @@
 import PubSub from 'pubsub-js'
 
-import Card from './Card.js'
+import Pack from './Pack.js'
 import { map, shuffleArray, pick, hexToRgb } from './utils.js'
 import * as V from './variations'
 
-export class CardBack extends Card {
+export class PackFront extends Pack {
     constructor(p, opts) {
 		super(p, opts)
 
@@ -19,16 +19,18 @@ export class CardBack extends Card {
 		this.createPool()
 	}
 
+
+
 	init() {
 		const onKeydown = (e) => {
 			if(e.key === 'Enter') {
-				this.p.saveCanvas(`CARD_BACK`, 'jpg')
+				this.p.saveCanvas(`PACK_FRONT`, 'jpg')
 			}
 		}
 		window.addEventListener('keydown', onKeydown)
 
 		this.tokenSubDownloadRequest = PubSub.subscribe('DOWNLOAD_CANVAS', () => {
-			this.p.saveCanvas(`CARD_BACK`, 'jpg')
+			this.p.saveCanvas(`PACK_FRONT`, 'jpg')
 		})
 
 		this.destroyEventListeners = PubSub.subscribe('DESTROY', () => {
@@ -38,14 +40,48 @@ export class CardBack extends Card {
 			window.removeEventListener('keydown', onKeydown)
 			PubSub.unsubscribe(this.tokenSubDownloadRequest)
 		})
+
+		this.logo = this.p.loadImage('images/bicycle-logo-white.png')
+		this.spade = this.p.loadImage('images/spade-logo.png')
+	}
+
+	displayText() {
+		this.p.strokeWeight(1)
+		this.p.textAlign(this.p.LEFT, this.p.TOP)
+
+		//center spade
+		this.p.image(this.logo, this.inner.center.x - 75, this.inner.center.y - 140, 150, 120)
+
+		//center spade
+		this.p.image(this.spade, this.inner.center.x - 70, this.inner.center.y - 70, 140, 130)
+
+		//brand text 2
+		let stringBelowSpade = 'ZODIAC'
+		this.p.textSize(20)
+		this.p.fill(this.card.textColor)
+		this.p.textAlign(this.p.CENTER, this.p.CENTER)
+		this.p.text(stringBelowSpade, this.inner.center.x - 98, this.inner.center.y + 77, 200, 30)
+
+		//brand text 3
+		let stringBelowSpade2 = 'PLAYING CARDS'
+		this.p.textSize(16)
+		this.p.fill(this.card.textColor)
+		this.p.textAlign(this.p.CENTER, this.p.CENTER)
+		this.p.text(stringBelowSpade2, this.inner.center.x - 98, this.inner.center.y + 105, 200, 30)
 	}
 
 	createPool() {
+		const stats = {
+			rigid: 2,
+			refined: 4,
+			mystical: 2
+		}
+
 		this.variations.forEach((variation, i) => {
 			const diff = {
-				rigid: Math.abs(this.data.stats.rigid - variation.obj.stats.rigid) <= 2,
-				refined: Math.abs(this.data.stats.refined - variation.obj.stats.refined) <= 2,
-				mystical: Math.abs(this.data.stats.mystical - variation.obj.stats.mystical) <= 1
+				rigid: Math.abs(stats.rigid - variation.obj.stats.rigid) <= 2,
+				refined: Math.abs(stats.refined - variation.obj.stats.refined) <= 2,
+				mystical: Math.abs(stats.mystical - variation.obj.stats.mystical) <= 1
 			}
 
 			if(diff.rigid && diff.refined && diff.mystical) {
@@ -54,7 +90,6 @@ export class CardBack extends Card {
 
 		})
 
-		this.pool.push(pick(this.variations))
 		this.pool = shuffleArray(this.pool)
 	}
 

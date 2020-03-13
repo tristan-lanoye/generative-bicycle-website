@@ -1,15 +1,19 @@
+import { randomRange } from './utils'
+
 export const getSinusoidal = {
+	name: 'getSinusoidal',
 	func: (p, v, amount) => {
 		return p.createVector(amount * Math.sin(v.x), amount * Math.sin(v.y))
 	},
 	stats: {
-		rigid: 3,
-		refined: 0,
-		mystical: 0
+		rigid: 4,
+		refined: 3,
+		mystical: 1
 	}
 }
 
 export const getHyperbolic = {
+	name: 'getHyperbolic',
 	func: (p, v, amount) => {
 		let r = v.mag() + 1.0e-10
 		let theta = p.atan2(v.x, v.y)
@@ -18,13 +22,14 @@ export const getHyperbolic = {
 		return p.createVector(x, y)
 	},
 	stats: {
-		rigid: 0,
-		refined: 0,
-		mystical: 0
+		rigid: 1,
+		refined: 4,
+		mystical: 2
 	}
 }
 
 export const getSwirl = {
+	name: 'getSwirl',
 	func: (p, v, amount) => {
 		let r = v.mag() + 1.0e-10
 		let x = amount * (v.x * Math.sin(r * r) - v.y * Math.cos(r * r))
@@ -32,13 +37,14 @@ export const getSwirl = {
 		return p.createVector(x, y)
 	},
 	stats: {
-		rigid: 0,
-		refined: 0,
-		mystical: 0
+		rigid: 1,
+		refined: 3,
+		mystical: 4
 	}
 }
 
 export const getSpherical = {
+	name: 'getSpherical',
 	func: (p, v, amount) => {
 		let r = v.mag() + 1.0e-10
 		let x = amount * v.x * (1 / (r * r))
@@ -46,42 +52,14 @@ export const getSpherical = {
 		return p.createVector(x, y)
 	},
 	stats: {
-		rigid: 0,
-		refined: 0,
-		mystical: 0
-	}
-}
-
-export const getHorseshoe = {
-	func: (p, v, amount) => {
-		let r = v.mag() + 1.0e-10
-		let x = amount * (1 / r * ((v.x - v.y) * (v.x + v.y)))
-		let y = amount * (1 / r * (2 * v.x * v.y))
-		return p.createVector(x, y)
-	},
-	stats: {
-		rigid: 0,
-		refined: 0,
-		mystical: 0
-	}
-}
-
-export const getPolar = {
-	func: (p, v, amount) => {
-		let r = v.mag() + 1.0e-10
-		let angle = p.atan2(v.x, v.y)
-		let x = amount * (angle / Math.PI)
-		let y = amount * (r - 1)
-		return p.createVector(x, y)
-	},
-	stats: {
-		rigid: 0,
-		refined: 0,
-		mystical: 0
+		rigid: 2,
+		refined: 5,
+		mystical: 3
 	}
 }
 
 export const getHandkerchief = {
+	name: 'getHandkerchief',
 	func: (p, v, amount) => {
 		let r = v.mag() + 1.0e-10
 		let angle = p.atan2(v.x, v.y)
@@ -90,13 +68,14 @@ export const getHandkerchief = {
 		return p.createVector(x, y)
 	},
 	stats: {
-		rigid: 0,
-		refined: 0,
-		mystical: 0
+		rigid: 3,
+		refined: 1,
+		mystical: 5
 	}
 }
 
 export const getHeart = {
+	name: 'getHeart',
 	func: (p, v, amount) => {
 		let r = v.mag() + 1.0e-10
 		let angle = p.atan2(v.x, v.y)
@@ -105,13 +84,14 @@ export const getHeart = {
 		return p.createVector(x, y)
 	},
 	stats: {
-		rigid: 0,
-		refined: 0,
-		mystical: 0
+		rigid: 2,
+		refined: 1,
+		mystical: 3
 	}
 }
 
 export const getDisc = {
+	name: 'getDisc',
 	func: (p, v, amount) => {
 		let r = v.mag() + 1.0e-10
 		let angle = p.atan2(v.x, v.y)
@@ -120,13 +100,14 @@ export const getDisc = {
 		return p.createVector(x, y)
 	},
 	stats: {
-		rigid: 0,
-		refined: 0,
-		mystical: 0
+		rigid: 2,
+		refined: 4,
+		mystical: 3
 	}
 }
 
 export const getSpiral = {
+	name: 'getSpiral',
 	func: (p, v, amount) => {
 		let r = v.mag() + 1.0e-10
 		let angle = p.atan2(v.x, v.y)
@@ -135,13 +116,14 @@ export const getSpiral = {
 		return p.createVector(x, y)
 	},
 	stats: {
-		rigid: 0,
-		refined: 0,
-		mystical: 0
+		rigid: 2,
+		refined: 1,
+		mystical: 4
 	}
 }
 
 export const getDiamond = {
+	name: 'getDiamond',
 	func: (p, v, amount) => {
 		let r = v.mag() + 1.0e-10
 		let angle = p.atan2(v.x, v.y)
@@ -150,13 +132,14 @@ export const getDiamond = {
 		return p.createVector(x, y)
 	},
 	stats: {
-		rigid: 0,
-		refined: 0,
-		mystical: 0
+		rigid: 4,
+		refined: 4,
+		mystical: 2
 	}
 }
 
 export const getEx = {
+	name: 'getEx',
 	func: (p, v, amount) => {
 		let r = v.mag() + 1.0e-10
 		let angle = p.atan2(v.x, v.y)
@@ -169,13 +152,14 @@ export const getEx = {
 		return p.createVector(x, y)
 	},
 	stats: {
-		rigid: 0,
-		refined: 0,
-		mystical: 0
+		rigid: 2,
+		refined: 2,
+		mystical: 4
 	}
 }
 
 export const getJulia = {
+	name: 'getJulia',
 	func: (p, v, amount) => {
 		let r = amount * Math.sqrt(v.mag())
 		let theta = 0.5 * Math.atan2(v.x, v.y) + (2.0 * randomRange(0, 1)) * Math.PI
@@ -186,45 +170,48 @@ export const getJulia = {
 		return p.createVector(x, y)
 	},
 	stats: {
-		rigid: 0,
-		refined: 0,
-		mystical: 0
+		rigid: 3,
+		refined: 3,
+		mystical: 4
 	}
 }
 
-export const getJuliaLeft = {
-	func: (p, v, amount) => {
-		let r = v.mag() + 1.0e-10
-		let angle = p.atan2(v.x, v.y)
+// export const getJuliaLeft = {
+// 	name: 'getJuliaLeft',
+// 	func: (p, v, amount) => {
+// 		let r = v.mag() + 1.0e-10
+// 		let angle = p.atan2(v.x, v.y)
 
-		let x = amount * Math.sqrt(r) * (-Math.cos(angle / 2 + 0))
-		let y = amount * Math.sqrt(r) * (-Math.sin(angle / 2 + 0))
-		return p.createVector(x, y)
-	},
-	stats: {
-		rigid: 0,
-		refined: 0,
-		mystical: 0
-	}
-}
+// 		let x = amount * Math.sqrt(r) * (-Math.cos(angle / 2 + 0))
+// 		let y = amount * Math.sqrt(r) * (-Math.sin(angle / 2 + 0))
+// 		return p.createVector(x, y)
+// 	},
+// 	stats: {
+// 		rigid: 5,
+// 		refined: 4,
+// 		mystical: 4
+// 	}
+// }
 
-export const getJuliaRight = {
-	func: (p, v, amount) => {
-		let r = v.mag() + 1.0e-10
-		let angle = p.atan2(v.x, v.y)
+// export const getJuliaRight = {
+// 	name: 'getJuliaRight',
+// 	func: (p, v, amount) => {
+// 		let r = v.mag() + 1.0e-10
+// 		let angle = p.atan2(v.x, v.y)
 
-		let x = amount * Math.sqrt(r) * (Math.cos(angle / 2 + 0))
-		let y = amount * Math.sqrt(r) * (Math.sin(angle / 2 + 0))
-		return p.createVector(x, y)
-	},
-	stats: {
-		rigid: 0,
-		refined: 0,
-		mystical: 0
-	}
-}
+// 		let x = amount * Math.sqrt(r) * (Math.cos(angle / 2 + 0))
+// 		let y = amount * Math.sqrt(r) * (Math.sin(angle / 2 + 0))
+// 		return p.createVector(x, y)
+// 	},
+// 	stats: {
+// 		rigid: 5,
+// 		refined: 4,
+// 		mystical: 4
+// 	}
+// }
 
 export const getFisheye = {
+	name: 'getFisheye',
 	func: (p, v, amount) => {
 		let r = v.mag() + 1.0e-10
 		let angle = p.atan2(v.x, v.y)
@@ -234,26 +221,14 @@ export const getFisheye = {
 		return p.createVector(x, y)
 	},
 	stats: {
-		rigid: 0,
-		refined: 0,
-		mystical: 0
-	}
-}
-
-export const getExponential = {
-	func: (p, v, amount) => {
-		let x = amount * Math.exp(v.x - 1) * (Math.cos(Math.PI * v.y))
-		let y = amount * Math.exp(v.x - 1) * (Math.sin(Math.PI * v.y))
-		return p.createVector(x, y)
-	},
-	stats: {
-		rigid: 0,
-		refined: 0,
-		mystical: 0
+		rigid: 4,
+		refined: 4,
+		mystical: 3
 	}
 }
 
 export const getPower = {
+	name: 'getPower',
 	func: (p, v, amount) => {
 		let r = v.mag() + 1.0e-10
 		let angle = p.atan2(v.x, v.y)
@@ -263,13 +238,14 @@ export const getPower = {
 		return p.createVector(x, y)
 	},
 	stats: {
-		rigid: 0,
-		refined: 0,
-		mystical: 0
+		rigid: 1,
+		refined: 1,
+		mystical: 1
 	}
 }
 
 export const getSech = {
+	name: 'getSech',
 	func: (p, v, amount) => {
 		let weight = 1
 		let d = Math.cos(2.0 * (v.y) + Math.cosh(2.0 * (v.x)))
@@ -278,25 +254,8 @@ export const getSech = {
 		return p.createVector(d * Math.cos(v.y) * Math.cosh(v.x), -d * Math.sin(v.y) * Math.sinh(v.x))
 	},
 	stats: {
-		rigid: 0,
-		refined: 0,
-		mystical: 0
-	}
-}
-
-export const getPerspective = {
-	func: (p, v, amount) => {
-		let p1 = 90
-		let p2 = 300
-
-		let x = amount * (p2 / (p2 - v.y * Math.sin(p1)) * v.x)
-		let y = amount * (p2 / (p2 - v.y * Math.sin(p1)) * v.y * Math.cos(p1))
-
-		return p.createVector(x, y)
-	},
-	stats: {
-		rigid: 0,
-		refined: 0,
-		mystical: 0
+		rigid: 3,
+		refined: 4,
+		mystical: 4
 	}
 }

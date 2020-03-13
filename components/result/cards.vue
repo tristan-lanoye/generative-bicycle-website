@@ -30,6 +30,10 @@
 			text-align left
 			margin-bottom 60px
 
+			@media screen and (max-width: 850px) {
+				text-align center
+			}
+
 			.title {
 				font-family 'Circular Medium'
 				font-size 32px

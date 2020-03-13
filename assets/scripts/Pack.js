@@ -4,7 +4,7 @@ import paperColors from 'paper-colors'
 import { pick } from './utils.js'
 
 // 'Base' Card Class
-export default class Card {
+export default class Pack {
     constructor(p, opts = {}) {
 		this.p = p
 
@@ -30,8 +30,7 @@ export default class Card {
 			y1: this.card.position.y,
 			y2: this.card.position.y + this.card.size.height
 		}
-		this.card.type = typeof opts.card.type !== 'undefined' ? opts.card.type : 'card-back'
-		this.card.margin = typeof opts.card.margin !== 'undefined' ? opts.card.margin : 14
+		this.card.margin = typeof opts.card.margin !== 'undefined' ? opts.card.margin : 0
 		this.card.borderRadius = typeof opts.card.borderRadius !== 'undefined' ? opts.card.borderRadius : 5
 
 		/*
@@ -76,10 +75,9 @@ export default class Card {
 		this.data = {}
 		this.data = window.statsData
 
-		this.inner.color = this.data.answers[0].content
-		this.inner.drawingColor = pick(this.data.answers[0].stats.complementary)
-		this.card.borderColor = this.card.type === 'card-back' ? '#fff' : this.inner.color
-		this.card.textColor = this.inner.color === '#0D2226' ? '#ffffff': '#000000'
+		this.inner.color = '#0D2226'
+		this.inner.drawingColor = this.data.answers[0].content
+		this.card.textColor = '#ffffff'
 	}
 
 	displayText() {
@@ -104,17 +102,17 @@ export default class Card {
 
     displayBorder() {
 		this.p.strokeWeight(3)
-        this.p.stroke(this.card.borderColor)
+        this.p.stroke(this.canvas.color)
         this.p.noFill()
         this.p.rect(this.inner.position.x, this.inner.position.y, this.inner.size.width, this.inner.size.height, this.card.borderRadius)
 
 		this.p.strokeWeight(5)
-        this.p.stroke(this.card.borderColor)
+        this.p.stroke(this.canvas.color)
         this.p.noFill()
 		this.p.rect(this.inner.position.x - 2, this.inner.position.y - 2, this.inner.size.width + 4, this.inner.size.height + 4, this.card.borderRadius)
 
 		this.p.strokeWeight(5)
-        this.p.stroke(this.card.borderColor)
+        this.p.stroke(this.canvas.color)
         this.p.noFill()
 		this.p.rect(this.inner.position.x - 6, this.inner.position.y - 6, this.inner.size.width + 12, this.inner.size.height + 12, this.card.borderRadius)
 

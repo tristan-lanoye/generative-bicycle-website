@@ -154,7 +154,7 @@
 		computed: {
 			...mapGetters({
 				state: 'GET_STATE',
-				questions: 'GET_QUESTIONS'
+				questions: 'GET_QUESTIONS',
 			}),
 			currentStep() {
 				return this.state.step.current
@@ -166,7 +166,7 @@
 		methods: {
 			...mapMutations({
 				incrementStep: 'INCREMENT_STEP',
-				decrementStep: 'DECREMENT_STEP',
+				decrementStep: 'DECREMENT_STEP'
 			}),
 			nextStep() {
 				this.keyValue = Math.random()
