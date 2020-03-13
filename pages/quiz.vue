@@ -22,9 +22,9 @@
 	import { TimelineLite } from 'gsap'
 	import { mapGetters } from 'vuex'
 
-	import topbar from '~/components/topbar'
-	import quizContent from '~/components/quiz/content'
-	import background from '~/components/background'
+	import topbar from '@/components/topbar'
+	import quizContent from '@/components/quiz/content'
+	import background from '@/components/background'
 
 	export default {
 		transition: {

@@ -1,9 +1,9 @@
 <template>
 	<div class="background-container">
-		<img class="base" src="~/assets/images/decor-cards-base.png" alt="">
+		<img class="base" src="@/assets/images/decor-cards-base.png" alt="">
 		<div class="side-container">
-			<img class="side side-left" src="~/assets/images/decor-card-left.png" alt="">
-			<img class="side side-right" src="~/assets/images/decor-card-right.png" alt="">
+			<img class="side side-left" src="@/assets/images/decor-card-left.png" alt="">
+			<img class="side side-right" src="@/assets/images/decor-card-right.png" alt="">
 		</div>
 		<div class="gradient"></div>
 	</div>

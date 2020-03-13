@@ -21,10 +21,10 @@
 	import paperColors from 'paper-colors'
 	import { mapGetters, mapMutations } from 'vuex'
 
-	import { pick } from '~/assets/scripts/utils'
-	import { CardBack } from '~/assets/scripts/CardBack'
-	import { CardFront } from '~/assets/scripts/CardFront'
-	import { PackFront } from '~/assets/scripts/PackFront'
+	import { pick } from '@/assets/scripts/utils'
+	import { CardBack } from '@/assets/scripts/CardBack'
+	import { CardFront } from '@/assets/scripts/CardFront'
+	import { PackFront } from '@/assets/scripts/PackFront'
 
 	export default {
 		name: 'card',

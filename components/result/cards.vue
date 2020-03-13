@@ -51,7 +51,7 @@
 <script>
 	import { mapGetters, mapMutations } from 'vuex'
 
-	import card from '~/components/result/card'
+	import card from '@/components/result/card'
 
 	export default {
 		name: 'cards',

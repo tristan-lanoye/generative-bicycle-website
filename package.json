@@ -1,7 +1,7 @@
 {
 	"name": "tlv3",
 	"version": "1.0.0",
-	"description": "Design Generatif",
+	"description": "Create your own deck based on your personality and zodiac sign with Bicycle.",
 	"author": "Tristan Lanoye",
 	"private": true,
 	"scripts": {

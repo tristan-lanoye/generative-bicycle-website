@@ -9,7 +9,7 @@
 		<div class="download-button-container">
 			<div class="download-button" @click="onDownloadClick">
 				<span>Télécharger votre résultat</span>
-				<img src="~/assets/icons/sparkles.png" alt="">
+				<img src="@/assets/icons/sparkles.png" alt="">
 			</div>
 			<!-- <div class="refresh-button" @click="onRefreshClick">
 				<span class="refresh">Actualiser</span>

@@ -23,9 +23,9 @@
 <script>
 	import { TimelineLite } from 'gsap'
 
-	import topbar from '~/components/topbar'
-	import indexContent from '~/components/index/content'
-	import background from '~/components/background'
+	import topbar from '@/components/topbar'
+	import indexContent from '@/components/index/content'
+	import background from '@/components/background'
 
 	export default {
 		transition: {

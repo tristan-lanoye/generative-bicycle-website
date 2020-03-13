@@ -34,10 +34,10 @@
 	import { TimelineLite } from 'gsap'
 	import { mapGetters, mapMutations } from 'vuex'
 
-	import topbar from '~/components/topbar'
-	import cards from '~/components/result/cards'
-	import download from '~/components/result/download'
-	import background from '~/components/background'
+	import topbar from '@/components/topbar'
+	import cards from '@/components/result/cards'
+	import download from '@/components/result/download'
+	import background from '@/components/background'
 
 	export default {
 		transition: {

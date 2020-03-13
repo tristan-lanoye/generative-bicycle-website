@@ -1,11 +1,11 @@
 <template>
 	<div class="topbar-container">
 		<div class="topbar-left" @click="prevStep">
-			<img v-if="this.$router.currentRoute.name != 'index'" src="~/assets/icons/chevron-right.svg" alt="">
+			<img v-if="this.$router.currentRoute.name != 'index'" src="@/assets/icons/chevron-right.svg" alt="">
 		 	<span v-if="this.$router.currentRoute.name != 'index'">Retour</span>
 		</div>
 		<div class="logo-container">
-			<img src="~/assets/images/logo.png" alt="">
+			<img src="@/assets/images/logo.png" alt="">
 		</div>
 		<div class="topbar-right"></div>
 	</div>
