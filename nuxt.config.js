@@ -14,7 +14,7 @@ module.exports = {
 			{ hid: 'description', name: 'description', content: pkg.description }
 		],
 		link: [
-			{ rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' },
+			{ rel: 'icon', type: 'image/x-icon', href: '/bicycle-make-your-deck/favicon/favicon.ico' },
 			{ rel: 'icon', type: 'image/png', sizes: '16x16', href: '/bicycle-make-your-deck/favicon/favicon-16x16.png' },
 			{ rel: 'icon', type: 'image/png', sizes: '32x32', href: '/bicycle-make-your-deck/favicon/favicon-32x32.png' },
 			{ rel: 'apple-touch-icon', sizes: '180x180', href: '/bicycle-make-your-deck/favicon/apple-touch-icon.png' },
