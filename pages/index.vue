@@ -21,7 +21,7 @@
 </style>
 
 <script>
-	import { TimelineLite } from 'gsap'
+	import { TimelineLite, Power3 } from 'gsap'
 
 	import topbar from '@/components/topbar'
 	import indexContent from '@/components/index/content'

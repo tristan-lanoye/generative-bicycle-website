@@ -19,7 +19,7 @@
 </style>
 
 <script>
-	import { TimelineLite } from 'gsap'
+	import { TimelineLite, Power3 } from 'gsap'
 	import { mapGetters } from 'vuex'
 
 	import topbar from '@/components/topbar'

@@ -31,7 +31,7 @@
 </style>
 
 <script>
-	import { TimelineLite } from 'gsap'
+	import { TimelineLite, Power3 } from 'gsap'
 	import { mapGetters, mapMutations } from 'vuex'
 
 	import topbar from '@/components/topbar'
