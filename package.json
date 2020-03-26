@@ -12,7 +12,7 @@
 	},
 	"dependencies": {
 		"cross-env": "^7.0.2",
-		"gsap": "^3.2.6",
+		"gsap": "^2.0.2",
 		"imagesloaded": "^4.1.4",
 		"in-viewport": "^3.6.0",
 		"nuxt": "^2.12.1",
